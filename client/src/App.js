@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ConditionalRoute from './routes/conditionalRoute';
 import { ChakraProvider } from '@chakra-ui/react'
+import './App.css'
 import theme from "./theme";
 
 

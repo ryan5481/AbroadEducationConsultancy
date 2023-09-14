@@ -7,6 +7,9 @@ import { Box, Image, Heading, AspectRatio, Highlight, useColorModeValue, IconBut
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import arrow icons
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 
+const baseUrl = process.env.REACT_APP_BASE_URL  
+
+
 const Carousel = () => {
     const hoverColor = "#0D74FF"
   const [carouselImageData, setCarouselImageData] = useState([]);
@@ -14,7 +17,7 @@ const Carousel = () => {
 
   const fetchCarouselImages = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/get-carousel-images');
+      const res = await axios.get(`${baseUrl}/get-carousel-images`);
       if (res.status === 200) {
         setCarouselImageData(res.data.data);
       } else {
@@ -54,8 +57,8 @@ const Carousel = () => {
   };
 
   return (
-    <Box  >
-      <Slider {...settings} ref={sliderRef}>
+    <Box   >
+      <Slider {...settings} ref={sliderRef} >
         {carouselImageData.map((image, index) => (
           <Box key={`carousel_${index}`}  >
             <AspectRatio ratio={{base: '0.8', sm: '0.8', md: '1', lg: '2'}}>
@@ -64,6 +67,7 @@ const Carousel = () => {
                 alt={image.imageTitle}
                 objectFit="cover"
                 w="100%"
+                zIndex={0}
               />
             </AspectRatio>
             
@@ -92,7 +96,7 @@ const Carousel = () => {
         aria-label="Previous"
         onClick={handlePrev}
         position="absolute"
-        top={{base:"0.8%", sm:"1.5%", md: "3%", lg:"50%", xl: "50%"}}
+        top={"50%"}
         left="2%"
         zIndex={4}
       />
@@ -103,7 +107,7 @@ const Carousel = () => {
         aria-label="Next"
         onClick={handleNext}
         position="absolute"
-        top={{base:"0.8%", sm:"1.5%", md: "3%", lg:"50%", xl: "50%"}}
+        top={"50%"}
         right="2%"
         zIndex={4}
       />

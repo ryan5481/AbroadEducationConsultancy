@@ -1,14 +1,49 @@
-import { Text, Box } from "@chakra-ui/react"
-import Carousel from "../components/imageGallery/carousel"
+import React, { useEffect, useState, useRef } from 'react';
+import { Text, Box, Button } from "@chakra-ui/react";
+import Carousel from "../components/imageGallery/carousel";
+import Services from '../components/imageGallery/services';
 
 const Home = () => {
-    return(
-        < >
-        <Box bg='brown.10' >
-        <Carousel/>
-        </Box>
-        </>
-    )
-}
+    const servicesRef = useRef(null);
+    const [servicesVisible, setServicesVisible] = useState(false);
 
-export default Home
+    const scrollToServices = () => {
+        if (servicesRef.current) {
+            servicesRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                setServicesVisible(true);
+                observer.unobserve(servicesRef.current); // Stop observing once it's visible
+            }
+        });
+
+        if (servicesRef.current) {
+            observer.observe(servicesRef.current);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (servicesVisible) {
+            scrollToServices();
+        }
+    }, [servicesVisible]);
+
+    return (
+        <>
+            <Box bg='brown.10'>
+                <Button zIndex={9999} onClick={scrollToServices}>CLICK</Button>
+                <Carousel />
+                <div ref={servicesRef}>
+                    <Services />
+                </div>
+            </Box>
+        </>
+    );
+};
+
+export default Home;

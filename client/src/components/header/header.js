@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { FaWhatsapp, FaFacebook, FaFacebookMessenger } from 'react-icons/fa'
 import { ReactNode } from 'react'
+const baseUrl = process.env.REACT_APP_BASE_URL 
 
 
 
@@ -23,15 +24,15 @@ const Header = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [data, setData] = useState([])
 
-  const GetHeaderData = async() => {
-    const res = await axios.get('http://localhost:8000/get-contact-info')
-    if(res){
+  const GetHeaderData = async () => {
+    const res = await axios.get(`${baseUrl}/get-contact-info`)
+    if (res) {
       // console.log("DATAAAA:" + data)
       setData(res.data.data)
-    }else{
+    } else {
       alert("Failed to fech header data")
     }
-  } 
+  }
 
   useEffect(() => {
     GetHeaderData()
@@ -39,7 +40,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); 
+      setIsMobileView(window.innerWidth <= 768);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -73,73 +74,76 @@ const Header = () => {
     return null; // Render nothing if in mobile view
   }
   return (
-  <>
-    <Box 
-      bg='brown.900'
-      color='gray.50'
-      h={50}
-      w="full"
-      fontSize={{ sm: 'xxs', md: 'sm' }}
-    >
-      <Container
-        as={Stack}
-        maxW={'full'}
-        maxH={50}
-        py={2}
-        direction={{ base: 'column', md: 'row' }}
-        spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
+    <>
+      <Box
+        pos='sticky'
+        w='100%'
+        h='45px'
+        z-index={11}
+        top='0px'
+        bg='brown.700'
+        color='gray.50'
+        fontSize={{ sm: 'xxs', md: 'sm' }}
       >
-        <Stack direction={'row'} spacing={6}>
-        <Center>
-          <a href={`mailto:${data.email}`}>{data.email}</a>
-          </Center>
-          <Center>
-          <a href={`tel:${data.phoneNumber1}`}>{data.phoneNumber}</a>
-          </Center>
-        </Stack>
-        <Stack direction={'row'} spacing={6}>
-          <Center>
-          <IconButton
-            color={'white'}
-            aria-label="facebook"
-            variant="ghost"
-            size="sm"
-            isRound={true}
-            _hover={{ bg: hoverColor }}
-            icon={<FaWhatsapp size="22px" />}
-            onClick={() => openWhatsappChat(data.whatsappId)}
-            />
+        <Container
+          as={Stack}
+          maxW={'full'}
+          maxH={50}
+          py={2}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify={{ base: 'center', md: 'space-between' }}
+          align={{ base: 'center', md: 'center' }}
+        >
+          <Stack direction={'row'} spacing={6}>
+            <Center>
+              <a href={`mailto:${data.email}`}>{data.email}</a>
             </Center>
             <Center>
-          <IconButton
-            color={'white'}
-            aria-label="facebook"
-            variant="ghost"
-            size="sm"
-            isRound={true}
-            _hover={{ bg: hoverColor }}
-            icon={<FaFacebook size="22px" />}
-            onClick={() => openWhatsappChat(data.facebookId)}
-        />
-        </Center>
+              <a href={`tel:${data.phoneNumber1}`}>{data.phoneNumber}</a>
+            </Center>
+          </Stack>
+          <Stack direction={'row'} spacing={6}>
             <Center>
-          <IconButton
-            color={'white'}
-            aria-label="facebook"
-            variant="ghost"
-            size="sm"
-            isRound={true}
-            _hover={{ bg: hoverColor }}
-            icon={<FaFacebookMessenger size="22px" />}
-            onClick={() => openWhatsappChat(data.messangerId)}
-        />
-         </Center>
-        </Stack>
-      </Container>
-    </Box>
-  </>
+              <IconButton
+                color={'white'}
+                aria-label="facebook"
+                variant="ghost"
+                size="sm"
+                isRound={true}
+                _hover={{ bg: hoverColor }}
+                icon={<FaWhatsapp size="22px" />}
+                onClick={() => openWhatsappChat(data.whatsappId)}
+              />
+            </Center>
+            <Center>
+              <IconButton
+                color={'white'}
+                aria-label="facebook"
+                variant="ghost"
+                size="sm"
+                isRound={true}
+                _hover={{ bg: hoverColor }}
+                icon={<FaFacebook size="22px" />}
+                onClick={() => openWhatsappChat(data.facebookId)}
+              />
+            </Center>
+            <Center>
+              <IconButton
+                color={'white'}
+                aria-label="facebook"
+                variant="ghost"
+                size="sm"
+                isRound={true}
+                _hover={{ bg: hoverColor }}
+                icon={<FaFacebookMessenger size="22px" />}
+                onClick={() => openWhatsappChat(data.messangerId)}
+              />
+            </Center>
+          </Stack>
+        </Container>
+      </Box>
+    </>
   )
 }
 
