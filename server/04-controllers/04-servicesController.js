@@ -1,15 +1,14 @@
 const Services = require("../02-models/04-servicesSchema.js");
-const fs = require("fs")
-const path = require("path")
 
 const AddServiceImage = async (req, res) => {
   try {
     if (req.file) {
-      let serviceImage = fs.readFileSync(path.join("../client/src/uploads/serviceImages/" + req.file.filename))
+      const reqInclImg = {
+        ...req.body,
+        serviceImage: req.file.filename,
+      };
 
-      let reqInclImage = { ...req.body, serviceImage: serviceImage }
-
-      const data = await Services.create(reqInclImage);
+      const data = await Services.create(reqInclImg);
       if (data) {
         res.status(200).json({
           msg: "Data added."
@@ -46,10 +45,12 @@ const UpdateServiceImage = async (req, res) => {
   try {
 
     if (req.file) {
-      const serviceImage = fs.readFileSync(path.join("../client/src/uploads/serviceImages/" + req.file.filename))
-      const reqInclImage = { ...req.body, serviceImage: serviceImage }
+      const reqInclImg = {
+        ...req.body,
+        serviceImage: req.file.filename,
+      };
 
-      const data = await Services.findByIdAndUpdate(req.body._id, reqInclImage);
+      const data = await Services.findByIdAndUpdate(req.body._id, reqInclImg);
       if (data) {
         res.json({
           msg: "Data updated."

@@ -57,7 +57,7 @@ const Carousel = () => {
   };
 
   return (
-    <Box   >
+    <Box overflow='hidden'   >
       <Slider {...settings} ref={sliderRef} >
         {carouselImageData.map((image, index) => (
           <Box key={`carousel_${index}`}  >
@@ -70,8 +70,8 @@ const Carousel = () => {
                 zIndex={0}
               />
             </AspectRatio>
-            
             <Heading
+              data-aos="zoom-out-down" data-aos-once='true'
               pos='relative'
               style={{ transform: 'translateY(-130px)' }}
               as="h1"

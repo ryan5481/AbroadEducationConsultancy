@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { persistor, store } from './redux/store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from "react-redux";
+import Aos from 'aos'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
