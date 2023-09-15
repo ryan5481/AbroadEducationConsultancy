@@ -79,7 +79,7 @@ const Header = () => {
         pos='sticky'
         w='100%'
         h='45px'
-        z-index={11}
+        z-index={11111}
         top='0px'
         bg='brown.700'
         color='gray.50'

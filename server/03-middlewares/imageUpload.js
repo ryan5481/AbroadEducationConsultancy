@@ -48,6 +48,40 @@ const ServicesImageUpload = multer({
     // fileFilter: fileFilter
 }).single("serviceImage")
 
+//SERVICES
+const aboutUsImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/aboutUsImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "About_Us_" + Date.now() + ".jpeg")
+    }
+})
+
+const AboutUsImageUpload = multer({
+    storage: aboutUsImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("aboutUsImage")
+
+//SERVICES
+const articleImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/articleImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "Article_Img_" + Date.now() + ".jpeg")
+    }
+})
+
+const ArticleImageUpload = multer({
+    storage: articleImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("articleImage")
+
 exports.CarouselImageUpload = CarouselImageUpload;
 exports.LogoImageUpload = LogoImageUpload;
 exports.ServicesImageUpload = ServicesImageUpload;
+exports.AboutUsImageUpload = AboutUsImageUpload;
+exports.ArticleImageUpload = ArticleImageUpload;
