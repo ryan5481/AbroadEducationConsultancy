@@ -6,9 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Box, Image, Heading, AspectRatio, Highlight, useColorModeValue, IconButton } from '@chakra-ui/react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import arrow icons
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
-
 const baseUrl = process.env.REACT_APP_BASE_URL  
-
 
 const Carousel = () => {
     const hoverColor = "#0D74FF"

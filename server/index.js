@@ -11,6 +11,8 @@ const carouselRoutes = require('./05-routes/03-carouselRoutes.js')
 const servicesRoutes = require('./05-routes/04-servicesRoutes.js')
 const aboutUsRoutes = require('./05-routes/05-aboutUsRoutes.js')
 const articleRoutes = require('./05-routes/06-articleRoutes.js')
+const countryArticleRoutes = require('./05-routes/07-countryArticleRoutes.js')
+const testimonyRoutes = require('./05-routes/08-testimonyRoutes.js')
 
 const port = 8000;
 
@@ -26,6 +28,8 @@ app.use("/", carouselRoutes);
 app.use("/", servicesRoutes);
 app.use("/", aboutUsRoutes);
 app.use("/", articleRoutes);
+app.use("/", countryArticleRoutes);
+app.use("/", testimonyRoutes);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
