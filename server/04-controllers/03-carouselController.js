@@ -4,7 +4,7 @@ const Carousel = require("../02-models/03-carouselSchema.js");
   try {
     const reqInclImg = {
       ...req.body,
-      carouselImage: req.file.filename,
+      testimonyImage: req.file.filename,
     };
     const data = await Carousel.create(reqInclImg);
     // console.log(req.body);
@@ -45,7 +45,7 @@ const Carousel = require("../02-models/03-carouselSchema.js");
   try {
     const reqInclImg = {
       ...req.body,
-      carouselImage: req.file.filename,
+      testimonyImage: req.file.filename,
     };
     const data = await Carousel.findByIdAndUpdate(req.body._id, reqInclImg);
     // console.log(userIdsPosts);

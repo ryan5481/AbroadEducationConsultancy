@@ -48,7 +48,7 @@ const ServicesImageUpload = multer({
     // fileFilter: fileFilter
 }).single("serviceImage")
 
-//SERVICES
+//ABOUT US
 const aboutUsImageStorage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "../client/src/uploads/aboutUsImages/")
@@ -64,7 +64,7 @@ const AboutUsImageUpload = multer({
     // fileFilter: fileFilter
 }).single("aboutUsImage")
 
-//SERVICES
+//ARTICLES
 const articleImageStorage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "../client/src/uploads/articleImages/")
@@ -80,8 +80,42 @@ const ArticleImageUpload = multer({
     // fileFilter: fileFilter
 }).single("articleImage")
 
+//COUNTRIES
+const countryImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/countryImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "Country_Img_" + Date.now() + ".jpeg")
+    }
+})
+
+const CountryImageUpload = multer({
+    storage: countryImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("countryImage")
+
+//TESTIMONY
+const testimonyImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/testimonyImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "Testimony" + Date.now() + ".jpeg")
+    }
+})
+
+const TestimonyImageUpload = multer({
+    storage: testimonyImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("testimonyImage")
+
 exports.CarouselImageUpload = CarouselImageUpload;
 exports.LogoImageUpload = LogoImageUpload;
 exports.ServicesImageUpload = ServicesImageUpload;
 exports.AboutUsImageUpload = AboutUsImageUpload;
 exports.ArticleImageUpload = ArticleImageUpload;
+exports.CountryImageUpload = CountryImageUpload;
+exports.TestimonyImageUpload = TestimonyImageUpload;
