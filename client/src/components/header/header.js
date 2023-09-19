@@ -76,12 +76,11 @@ const Header = () => {
   return (
     <>
       <Box
-        pos='sticky'
         w='100%'
         h='45px'
-        z-index={11111}
+        z-index='1111'
         top='0px'
-        bg='brown.700'
+        bg='brown.900'
         color='gray.50'
         fontSize={{ sm: 'xxs', md: 'sm' }}
       >

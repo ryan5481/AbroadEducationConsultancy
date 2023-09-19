@@ -21,7 +21,7 @@ const Contact = require("../02-models/01-contactSchema.js");
  const GetContactInfo = async (req, res) => {
   try {
     //http://localhost:8000/admin/edit-contact-info/65016d03646e5d503fca284e
-    const data = await Contact.findById("65016d03646e5d503fca284e");
+    const data = await Contact.findById("65093ec952509869a591e691");
     // console.log(allUsersPosts);
     if (data) {
       res.json({ 

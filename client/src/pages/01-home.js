@@ -7,20 +7,25 @@ import AboutUs from '../components/homePageComponents/03-aboutUs';
 import ArticlesGrid from '../components/homePageComponents/04-articlesGrid';
 import CountryArticlesGrid from '../components/homePageComponents/05-counrtyArticlesGrid'
 import Testimonies from '../components/homePageComponents/06-testimonies';
+import Universities from '../components/homePageComponents/07-universitiesCarousel';
+import LineChart from '../components/homePageComponents/08-lineChart'
 
 const Home = () => {
-   
    
 
     return (
         <>
-            <Box bg='brown.10'>
+            <Box>
                 <Carousel />
                 <Services />
                 <AboutUs/>
                 <ArticlesGrid/>
                 <CountryArticlesGrid/>
                 <Testimonies/>
+                <Box >
+                <Universities />
+                <LineChart />
+                </Box>
             </Box>
         </>
     );

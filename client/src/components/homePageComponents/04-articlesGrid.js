@@ -21,7 +21,7 @@ const ArticlesGrid = () => {
 
 
     return (
-        <Box m={5} color='blue.600' justifyContent="center" textAlign='center'>
+        <Box my={10} color='blue.600' justifyContent="center" textAlign='center'>
             <Heading textAlign='canter'  >News and Events </Heading>
             {articlesList &&
                 <Grid templateColumns={{base: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' }} gap={1} p={10} rowGap={1}>

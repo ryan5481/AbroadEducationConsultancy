@@ -5,6 +5,7 @@ import '../App.css';
 import Home from "../pages/01-home.js"
 import Header from '../components/header/header';
 import NavBar  from '../components/navigation/navbar'
+import Footer from '../components/footer/footer';
 
 
 const ConditionalRoute = () => {
@@ -26,7 +27,7 @@ const UserRoutes = () => {
         {/* <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/brochure" element={<Brochure />} /> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

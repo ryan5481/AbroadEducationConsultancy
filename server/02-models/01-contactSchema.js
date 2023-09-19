@@ -7,6 +7,18 @@ const contactSchema = ({
         default: "radiantInfoTech"
     },
 
+    tagline1: {
+        type: String,
+    },
+
+    tagline2: {
+        type: String,
+    },
+
+    tagline3: {
+        type: String,
+    },
+
     email: {
         type: String,
     },
@@ -43,7 +55,7 @@ const contactSchema = ({
         type: String,
     },
     
-    youtubeId: {
+    instagramId: {
         type: String,
     },
     
@@ -51,7 +63,7 @@ const contactSchema = ({
         type: String,
     },
 
-    contactUsSubHeading: {
+    contactUsSubheading: {
         type: String,
     },
 
@@ -64,3 +76,5 @@ const contactSchema = ({
 const Carousel = mongoose.model("Contact", contactSchema);
 
 module.exports = Carousel
+
+

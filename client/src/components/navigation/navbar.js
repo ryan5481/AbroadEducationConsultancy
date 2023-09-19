@@ -76,10 +76,10 @@ export default function NavBar() {
   return (
     <>
       <Flex
-        pos='fixed'
-        top='45px'
+        pos='sticky'
+        top='0px'
         w='100%'
-        zIndex='10'
+        zIndex='1111'
         bg={useColorModeValue('white', 'brown.800')}
         color={useColorModeValue('gray.600', 'white')}
         h={'70px'}
