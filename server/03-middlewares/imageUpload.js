@@ -112,6 +112,22 @@ const TestimonyImageUpload = multer({
     // fileFilter: fileFilter
 }).single("testimonyImage")
 
+//PARTNER UNIVERSITY
+const partnerUniversityImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/partnerUniversityImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "partner_Logo_" + Date.now() + ".jpeg")
+    }
+})
+
+const PartnerUniversityImageUpload = multer({
+    storage: partnerUniversityImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("partnerUniversityLogo")
+
 exports.CarouselImageUpload = CarouselImageUpload;
 exports.LogoImageUpload = LogoImageUpload;
 exports.ServicesImageUpload = ServicesImageUpload;
@@ -119,3 +135,4 @@ exports.AboutUsImageUpload = AboutUsImageUpload;
 exports.ArticleImageUpload = ArticleImageUpload;
 exports.CountryImageUpload = CountryImageUpload;
 exports.TestimonyImageUpload = TestimonyImageUpload;
+exports.PartnerUniversityImageUpload = PartnerUniversityImageUpload;

@@ -20,7 +20,7 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <Container maxW={'full'} bg='brown.900'
+        <Container maxW={'full'} bg='blue.600'
             color='white'>
             {aboutUsData && aboutUsData.aboutUsImage &&
                 <Stack
@@ -89,7 +89,8 @@ const AboutUs = () => {
                             px={6}
                             w={"200px"}
                             placeItems="center"
-                            bg={'blue.400'}
+                            bg={'white'}
+                            color='blue.600'
                             _hover={{ bg: 'whiteAlpha.900', color: 'blue.600' }}
                         //   onClick={() => navigate("/about")}
 

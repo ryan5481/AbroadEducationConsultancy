@@ -27,8 +27,8 @@ const Services = () => {
 
   return (
     <>
-    <Box color='blue.600' mb={10} >
-      <Heading textAlign='center'>Our Services</Heading>
+    <Box color='white' my={10}  >
+      <Heading color='blue.600' textAlign='center'>Our Services</Heading>
       <Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr' }} gap={5} p={10} align="center" rowGap={5}>
         {imageData.map((imageObj, index) => (
           <Box data-aos={getImageAnimationClass(index)} data-aos-duration="1000" data-aos-once="true" key={index}>
@@ -38,7 +38,7 @@ const Services = () => {
               rounded={5}
             />
             <Box
-              bg='white'
+              bg='blue.500'
               rounded='10'
               h={200}
               p={5}

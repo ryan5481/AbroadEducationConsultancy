@@ -1,12 +1,12 @@
-const Carousel = require("../02-models/03-carouselSchema.js");
+const PartnerUniveristy = require("../02-models/09-partnerUniveristySchema.js")
 
- const AddCarouselImage = async (req, res) => {
+ const AddPartnerUniverisityLogo = async (req, res) => {
   try {
     const reqInclImg = {
       ...req.body,
-      carouselImage: req.file.filename,
+      partnerUniversityLogo: req.file.filename,
     };
-    const data = await Carousel.create(reqInclImg);
+    const data = await PartnerUniveristy.create(reqInclImg);
     // console.log(req.body);
     if (data) {
       res.status(200).json({
@@ -22,9 +22,9 @@ const Carousel = require("../02-models/03-carouselSchema.js");
   }
 };
 
- const GetCarousleImages = async (req, res) => {
+ const GetPartnerUniverisityLogos = async (req, res) => {
   try {
-    const data = await Carousel.find();
+    const data = await PartnerUniveristy.find();
     // console.log(allUsersPosts);
     if (data) {
       res.json({ 
@@ -40,14 +40,14 @@ const Carousel = require("../02-models/03-carouselSchema.js");
   }
 };
 
- const UpdateCarouselImage = async (req, res) => {
+ const UpdatePartnerUniverisityLogo = async (req, res) => {
   // console.log(req.params);
   try {
     const reqInclImg = {
       ...req.body,
-      carouselImage: req.file.filename,
+      partnerUniversityLogo: req.file.filename,
     };
-    const data = await Carousel.findByIdAndUpdate(req.body._id, reqInclImg);
+    const data = await PartnerUniveristy.findByIdAndUpdate(req.body._id, reqInclImg);
     // console.log(userIdsPosts);
     if (data) {
       res.json({
@@ -63,12 +63,12 @@ const Carousel = require("../02-models/03-carouselSchema.js");
   }
 };
 
-const DeleteCarouselImage = async (req, res) => {
+const DeletePartnerUniverisityLogo = async (req, res) => {
   // console.log(req.params);
   try {
       const _id = req.params.id;
       console.log(req)
-      const deletedImage = await Carousel.findByIdAndDelete(_id);
+      const deletedImage = await PartnerUniveristy.findByIdAndDelete(_id);
 
       if (!deletedImage) {
           return res.status(404).json({ message: 'Image not found' });
@@ -80,7 +80,7 @@ const DeleteCarouselImage = async (req, res) => {
   }
 };
 
-exports.AddCarouselImage = AddCarouselImage
-exports.GetCarousleImages = GetCarousleImages
-exports.UpdateCarouselImage = UpdateCarouselImage
-exports.DeleteCarouselImage = DeleteCarouselImage
+exports.AddPartnerUniverisityLogo = AddPartnerUniverisityLogo
+exports.GetPartnerUniverisityLogos = GetPartnerUniverisityLogos
+exports.UpdatePartnerUniverisityLogo = UpdatePartnerUniverisityLogo
+exports.DeletePartnerUniverisityLogo = DeletePartnerUniverisityLogo

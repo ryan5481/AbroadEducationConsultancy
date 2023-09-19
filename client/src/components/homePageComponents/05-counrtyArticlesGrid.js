@@ -21,7 +21,7 @@ const CountryArticlesGrid = () => {
     }, []);
 
     return (
-        <Box m={5} color='blue.600' justifyContent="center" textAlign='center'>
+        <Box py={10} bg='blue.600' color='white' justifyContent="center" textAlign='center'>
             <Heading textAlign='center'> Your Next Study Destination </Heading>
             {countryArticlesList && (
                 <Grid
@@ -33,7 +33,7 @@ const CountryArticlesGrid = () => {
                     {countryArticlesList.map((countryArticle, index) => (
                         <AspectRatio key={index}>
                             <Box
-                            pos='relative'
+                                pos='relative'
                                 m={0}
                                 p={0}
                                 border={'2px solid white'}
@@ -45,10 +45,8 @@ const CountryArticlesGrid = () => {
                                 rounded="10px"
                                 shadow="xl"
                                 transition="0.35s ease-in-out"
-                                
                                 _hover={{
                                     transform: 'scale(1.1)',
-
                                 }}
                                 color='white'
                                 onMouseEnter={() => setHoveredIndex(index)} // Handle mouse enter
@@ -62,9 +60,6 @@ const CountryArticlesGrid = () => {
                                 style={{
                                     opacity: hoveredIndex === index ? "0.25" : '0', 
                                 }}
-                                // style={{
-                                //     opacity: '0.2'
-                                // }} 
                                 />
                                 <VStack
                                     textAlign='center'
@@ -85,7 +80,7 @@ const CountryArticlesGrid = () => {
                                             opacity={hoveredIndex === index ? 1 : 0}
 
                                         >
-                                            {countryArticle.text1.split(/\s+/).slice(0, 25).join(' ') + " ..."}
+                                            {countryArticle.text1.split(/\s+/).slice(0, 12).join(' ') + " ..."}
                                         </Text>
                                         <Link
                                             w='100%'
@@ -102,6 +97,7 @@ const CountryArticlesGrid = () => {
                                         w='100%'
                                     >
                                         <Heading
+                                        
                                             textAlign='center'
                                             style={{
                                                 textShadow: '2px 2px 4px rgba(0, 0, 0, 1)',
