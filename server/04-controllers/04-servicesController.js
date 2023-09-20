@@ -2,10 +2,12 @@ const Services = require("../02-models/04-servicesSchema.js");
 
 const AddServiceImage = async (req, res) => {
   try {
-    if (req.file) {
+    if (req.files) {
+      const imagePaths = req.files.map((file) => file.filename);
+
       const reqInclImg = {
         ...req.body,
-        serviceImage: req.file.filename,
+        serviceImages: imagePaths,
       };
 
       const data = await Services.create(reqInclImg);
@@ -44,10 +46,11 @@ const GetServiceImages = async (req, res) => {
 const UpdateServiceImage = async (req, res) => {
   try {
 
-    if (req.file) {
+    if (req.files) {
+      const imagePaths = req.files.map((file) => file.filename);
       const reqInclImg = {
         ...req.body,
-        serviceImage: req.file.filename,
+        serviceImages: imagePaths,
       };
 
       const data = await Services.findByIdAndUpdate(req.body._id, reqInclImg);

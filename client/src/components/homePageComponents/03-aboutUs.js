@@ -4,7 +4,7 @@ import axios from 'axios';
 const baseUrl = process.env.REACT_APP_BASE_URL
 
 const AboutUs = () => {
-    const [aboutUsData, setAboutUsData] = useState([]);
+    const [aboutUsData, setAboutUsData] = useState();
 
     useEffect(() => {
         const fetchAboutUS = async () => {
@@ -19,6 +19,8 @@ const AboutUs = () => {
         fetchAboutUS();
     }, []);
 
+
+    console.log(aboutUsData)
     return (
         <Container maxW={'full'} bg='blue.600'
             color='white'>

@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Box, Image, Heading, AspectRatio, IconButton, Button } from '@chakra-ui/react';
 import { ChevronRightIcon, ChevronLeftIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const baseUrl = process.env.REACT_APP_BASE_URL
@@ -108,7 +109,8 @@ const Carousel = () => {
             zIndex="20"
             data-aos="fade-right"
             data-aos-once="true"
-            data-aos-duration="800"
+            data-aos-duration="500"
+            data-aos-delay="1000"
             pos='absolute'
             left="100px"
             bottom='15%'

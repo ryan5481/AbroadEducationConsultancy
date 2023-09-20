@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import {
   Box,
   Flex,
@@ -28,7 +29,7 @@ import {
   MoonIcon,
   SunIcon
 } from '@chakra-ui/icons'
-const baseUrl = process.env.REACT_APP_BASE_URL 
+const baseUrl = process.env.REACT_APP_BASE_URL
 interface Props {
   children: React.ReactNode
 }
@@ -48,7 +49,7 @@ export default function NavBar() {
     try {
       const res = await axios.get(`${baseUrl}/get-logo-image`)
       const data = res.data.data
-      setLogoImageData(data)   
+      setLogoImageData(data)
     } catch (error) {
       console.error("Error: ", error)
     }
@@ -80,7 +81,7 @@ export default function NavBar() {
         top='0px'
         w='100%'
         zIndex='1111'
-        bg={useColorModeValue('white', 'brown.800')}
+        bg={useColorModeValue('white', 'blue.700')}
         color={useColorModeValue('gray.600', 'white')}
         h={'70px'}
         py={{ base: 0 }}
@@ -102,27 +103,33 @@ export default function NavBar() {
           />
         </Flex>
         {logoImageData && logoImageData.logoImage &&
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Image
-            src={ require("../../uploads/logoImages/" + logoImageData.logoImage)}
-            alt="Logo"
-            h='60px'
-            p={2}
-            _hover={{
-              textDecoration: 'none',
-              cursor: "pointer"
-            }}
-            // textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            onClick={() => navigate("/")}
-          />
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <Center>
-              <DesktopNav menuItems={menuItems} />
-            </Center>
+          <Flex
+            
+            flex={{ base: 1 }}
+            justify={{ base: 'center', md: 'start' }}
+          >
+            <Flex>
+            <Image
+              src={require("../../uploads/logoImages/" + logoImageData.logoImage)}
+              alt="Logo"
+              h='60px'
+              p={2}
+              _hover={{
+                textDecoration: 'none',
+                cursor: "pointer"
+              }}
+              // textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              onClick={() => navigate("/")}
+            />
+            </Flex>
+            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+              <Center>
+                <DesktopNav menuItems={menuItems} />
+              </Center>
+            </Flex>
           </Flex>
-        </Flex>
-}
+        }
         {/* toggle dark/light modes */}
         <Stack
           flex={{ base: 1, md: 0 }}
@@ -150,29 +157,48 @@ const DesktopNav = (props) => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
   const navigate = useNavigate();
   const menuHrefs = [
-    { href: "jobs" },
-    { href: "resume" },
+    { href: "/services",
+    children: [
+      { href: "/study-abroad" },
+      { href: "/visa-services" },
+      { href: "/preparation-classes" },
+      { href: "/migration-services" },
+      { href: "/health-insurance" },
+      { href: "/scholarships" },
+
+    ] },
+    { href: "/about-us" },
     {
-      href: "license",
+      href: "/study-destination",
       children: [
-        { href: "license" },
-        { href: "newspaper" },
+        { href: "/study-in-usa" },
+        { href: "/study-in-uk" },
+        { href: "/study-in-australia" },
+        { href: "/study-in-canada" },
+        { href: "/study-in-nz" },
+        { href: "/study-in-europe" },
+        { href: "/study-in-singapore" },
 
       ]
     },
     {
-      href: "about-us",
-      children: [
-        { href: "about-nepal" },
-        { href: "choose-us" },
-      ]
+      href: "/gallery",
+      // children: [
+      //   { href: "/about-nepal" },
+      //   { href: "/choose-us" },
+      // ]
     },
-    { href: "gallery" },
-    { href: "contact-us" }
+    { href: "/test-preparation" },
+    { href: "/contact-us" }
   ]
 
   return (
-    <Stack direction={'row'} spacing={4} fontWeight="bold"
+    <Stack
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      direction={'row'}
+      spacing={4} fontWeight="bold"
       color={useColorModeValue('blue.500', 'gray.300')}
     >
       <Box
@@ -199,7 +225,7 @@ const DesktopNav = (props) => {
                 <Box
                   as="a"
                   p={2}
-                  href={navItem[index]?.href ?? '/home'}
+                  href={menuHrefs[index]?.href || '/home'}
                   fontSize={'md'}
                   fontWeight={500}
                   _hover={{
@@ -228,7 +254,7 @@ const DesktopNav = (props) => {
                     {navItem.children.map((child, childIndex) => (
                       <DesktopSubNav
                         key={child.label} {...child}
-                        href={navItem[index]?.children[childIndex]?.href}
+                        href={menuHrefs[index]?.children[childIndex]?.href}
                         _hover={{
                           textDecoration: 'none',
                           color: linkHoverColor,

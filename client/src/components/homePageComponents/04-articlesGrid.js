@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Image, Heading,Text, Grid, Container, Button, Flex } from '@chakra-ui/react';
+import { Box, Image, Heading,Text, Grid, Center, Button, Flex } from '@chakra-ui/react';
 import axios from 'axios';
 const baseUrl = process.env.REACT_APP_BASE_URL
 
@@ -75,6 +75,9 @@ const ArticlesGrid = () => {
                     })}
                 </Grid>
             }
+            <Center>
+      <Button m={5} px={10} colorScheme='blue' rounded='full' >See all articles</Button>
+      </Center>
         </Box>
     )
 }

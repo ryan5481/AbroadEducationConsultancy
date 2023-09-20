@@ -46,7 +46,7 @@ const ServicesImageUpload = multer({
     storage: servicesImageStorage,
     // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
     // fileFilter: fileFilter
-}).single("serviceImage")
+}).array("serviceImages", 3)
 
 //ABOUT US
 const aboutUsImageStorage = multer.diskStorage({

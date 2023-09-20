@@ -2,10 +2,14 @@ import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useColorModeValue } from '@chakra-ui/react'
 import '../App.css';
-import Home from "../pages/01-home.js"
+//User Routes
 import Header from '../components/header/header';
 import NavBar  from '../components/navigation/navbar'
+import Home from "../pages/01-home.js"
+import Services from "../pages/02-services.js"
+import AboutUs from "../pages/03-aboutUs.js"
 import Footer from '../components/footer/footer';
+
 
 
 const ConditionalRoute = () => {
@@ -24,6 +28,8 @@ const UserRoutes = () => {
       <NavBar zIndex={10} />
       <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/about-us" element={<AboutUs />} />
         {/* <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/brochure" element={<Brochure />} /> */}
       </Routes>

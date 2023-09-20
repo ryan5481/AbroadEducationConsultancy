@@ -20,7 +20,7 @@ class LineChart extends React.Component {
       ],
       options: {
         responsive: [{
-          breakpoint: "365px",
+          breakpoint: "",
           options: {},
       }],
         chart: {

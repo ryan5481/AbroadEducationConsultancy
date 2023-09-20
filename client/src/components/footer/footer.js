@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import axios from 'axios'
 import {
     Box,
@@ -20,7 +21,7 @@ import { FaFilePdf } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 import { BsWhatsapp, BsMessenger, BsInstagram } from 'react-icons/bs'
 import { MdFacebook } from 'react-icons/md'
-const baseUrl = process.env.REACT_APP_BASE_URL 
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
     return (
@@ -37,11 +38,11 @@ const Footer = () => {
     const [email, setEmail] = useState('');
     const [socialData, setSocialData] = useState([])
     const toast = useToast()
-    
+
     useEffect(() => {
         fetchLogoImage()
         fetchContactData()
-    },[])
+    }, [])
 
     const fetchLogoImage = async () => {
         try {
@@ -63,27 +64,28 @@ const Footer = () => {
             alert("Failed to fech header data")
         }
     }
-            console.log("LOGO:" + logoImageData.logoImage)
-    
+    // console.log("LOGO:" + logoImageData.logoImage)
+
     //MAIL SUBSCRIBE
-    const handleInputChange = async(event) => {
+    const handleInputChange = async (event) => {
         setEmail(event.target.value)
     }
 
     const handleSubscribeMail = (event) => {
         event.preventDefault()
-        try{
+        try {
             setEmail(event.target.value)
-             if (email){ 
+            if (email) {
                 toast({
-                title: 'Subscribed',
-                description: 'You are subscribed to our newsletter.',
-                status: 'success',
-                duration: 3000,
-                isClosable: true,
-                position: 'top'
-            })}
-        }catch(error){
+                    title: 'Subscribed',
+                    description: 'You are subscribed to our newsletter.',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            }
+        } catch (error) {
             console.error("Error: " + error)
         }
     }
@@ -130,11 +132,11 @@ const Footer = () => {
                     <Stack spacing={6}>
                         <Box align="center">
                             {logoImageData &&
-                            <Image
-                                h='100px'
-                                // src={require(`../../uploads/logoImages/${logoImageData.logoImage}`)}
-                                alt='Logo'
-                            />
+                                <Image
+                                    h='100px'
+                                    // src={require(`../../uploads/logoImages/${logoImageData.logoImage}`)}
+                                    alt='Logo'
+                                />
                             }
                         </Box>
                         <Text fontSize={'sm'}>{socialData.tagline1}</Text>
@@ -186,7 +188,12 @@ const Footer = () => {
                             />
                         </Stack>
                     </Stack>
-                    <Stack align={'flex-start'} >
+                    <Stack
+                        as={motion.div}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        align={'flex-start'}
+                    >
                         <ListHeader>Company</ListHeader>
                         <Box as="a" href={'/about'} _hover={{ color: '#0D74FF' }} >
                             About us
@@ -200,21 +207,21 @@ const Footer = () => {
                         <Box as="a" href={'/gallery'} _hover={{ color: '#0D74FF' }}>
                             Image Gallery
                         </Box>
-                        
+
                     </Stack>
                     <Stack align={'flex-start'} >
                         <ListHeader>Support</ListHeader>
                         <Box as="a" href={'contact-us'} _hover={{ color: '#0D74FF' }}>
                             Contact Us
                         </Box>
-                        
+
                         <Box as="a" href={'/license'} _hover={{ color: '#0D74FF' }}>
                             License
                         </Box>
                         <Box as="a" href={'/resume'} _hover={{ color: '#0D74FF' }}>
                             Submit Resume
                         </Box>
-                        
+
                         <Box as="a" href={'/jobs'} _hover={{ color: '#0D74FF' }}>
                             Latest Jobs
                         </Box>

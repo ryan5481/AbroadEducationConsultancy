@@ -42,6 +42,21 @@ const aboutUsSchema = ({
         type: String,
     },
 
+    listheading1: {
+        type: String,
+    },
+
+    listItems: [
+        {
+            liHeading: {
+                type: String,
+            },
+            liText: {
+                type: String,
+            },
+        },
+    ],
+
     createdAt: { type: Date, default: Date.now },
     
     updatedAt: { type: Date, default: Date.now },

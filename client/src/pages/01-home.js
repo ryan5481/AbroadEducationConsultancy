@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Text, Box, Button } from "@chakra-ui/react";
 
 import Carousel from "../components/homePageComponents/01-carousel";
-import Services from '../components/homePageComponents/02-services';
+import ServicesGrid from '../components/homePageComponents/02-servicesGrid';
 import AboutUs from '../components/homePageComponents/03-aboutUs';
 import ArticlesGrid from '../components/homePageComponents/04-articlesGrid';
 import CountryArticlesGrid from '../components/homePageComponents/05-counrtyArticlesGrid'
@@ -17,7 +17,7 @@ const Home = () => {
         <>
             <Box>
                 <Carousel />
-                <Services />
+                <ServicesGrid displayAll={false} fromHomePage={true} />
                 <AboutUs/>
                 <ArticlesGrid/>
                 <CountryArticlesGrid/>
