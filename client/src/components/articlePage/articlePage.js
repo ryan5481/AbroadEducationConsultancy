@@ -48,6 +48,12 @@ const ArticlePage = ({ data }) => {
                             <VStack>
                                 <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.heading2}</Heading>
                                 <Text mb={10} >{data.text2}</Text>
+                                { data && data.points1 && data.points1
+                                .split(".")
+                                .filter((sentence) => sentence.trim() !== "")
+                                .map((sentence, index) => (
+                                    <Text textAlign='left' key={index}> {index + 1 + ". "} {sentence + "."}</Text>
+                                ))}
                                 <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.heading3}</Heading>
                                 <Text mb={10}>{data.text3}</Text>
                                {data.heading4 && <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.heading4}</Heading>}

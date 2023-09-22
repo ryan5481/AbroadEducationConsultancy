@@ -4,7 +4,7 @@ const ArticleModal = ({ isOpen, onClose, data, fromHomepage }) => {
 const taglineColor = useColorModeValue('brown.600', 'brown.10');
 const textColor = useColorModeValue('blue.600', 'white');
 
-const modalSize = fromHomepage ? 'xl' : 'full';
+const modalSize = fromHomepage = true ? 'xl' : 'full';
 
     return (
         <>

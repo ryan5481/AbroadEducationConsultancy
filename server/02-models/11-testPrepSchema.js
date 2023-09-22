@@ -1,5 +1,5 @@
 const mongoose = require ("mongoose");
-const articleSchema = ({
+const testPrepSchema = ({
 
     landmark: {
         type: String,
@@ -17,12 +17,20 @@ const articleSchema = ({
     text1: {
         type: String,
     },
+
+    points1: {
+        type: String,
+    },
     
     heading2: {
         type: String,
     },
 
     text2: {
+        type: String,
+    },
+    
+    points2: {
         type: String,
     },
     
@@ -34,6 +42,10 @@ const articleSchema = ({
         type: String,
     },
 
+    points3: {
+        type: String,
+    },
+
     heading4: {
         type: String,
     },
@@ -41,6 +53,11 @@ const articleSchema = ({
     text4: {
         type: String,
     },
+
+    points4: {
+        type: String,
+    },
+
     heading5: {
         type: String,
     },
@@ -48,6 +65,11 @@ const articleSchema = ({
     text5: {
         type: String,
     },
+    
+    points5: {
+        type: String,
+    },
+
     heading6: {
         type: String,
     },
@@ -55,6 +77,11 @@ const articleSchema = ({
     text6: {
         type: String,
     },
+
+    points6: {
+        type: String,
+    },
+
     heading7: {
         type: String,
     },
@@ -62,27 +89,61 @@ const articleSchema = ({
     text7: {
         type: String,
     },
+
+    points7: {
+        type: String,
+    },
+
     heading8: {
         type: String,
     },
 
-    text8: {
+    accordionTitle1: {
         type: String,
     },
-    heading8: {
+    
+    accordionText1: {
         type: String,
     },
-
-    text8: {
+    
+    accordionTitle2: {
         type: String,
     },
-
+    
+    accordionText2: {
+        type: String,
+    },
+    
+    accordionTitle3: {
+        type: String,
+    },
+    
+    accordionText3: {
+        type: String,
+    },
+    
+    accordionTitle4: {
+        type: String,
+    },
+    
+    accordionText4: {
+        type: String,
+    },
+    
+    accordionTitle5: {
+        type: String,
+    },
+    
+    accordionText5: {
+        type: String,
+    },
+    
     createdAt: { type: Date, default: Date.now },
     
     updatedAt: { type: Date, default: Date.now },
 
 })
 
-const Article = mongoose.model("Article", articleSchema);
+const TestPrep = mongoose.model("TestPrep", testPrepSchema);
 
-module.exports = Article
+module.exports = TestPrep

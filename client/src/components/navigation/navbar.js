@@ -172,13 +172,11 @@ const DesktopNav = (props) => {
       href: "/study-destination",
       children: [
         { href: "/study-in-usa" },
-        { href: "/study-in-uk" },
+        { href: "/study-in-united-kingdom" },
         { href: "/study-in-australia" },
         { href: "/study-in-canada" },
-        { href: "/study-in-nz" },
+        { href: "/study-in-new-zealand" },
         { href: "/study-in-europe" },
-        { href: "/study-in-singapore" },
-
       ]
     },
     {

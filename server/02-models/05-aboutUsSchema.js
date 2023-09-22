@@ -3,7 +3,7 @@ const aboutUsSchema = ({
 
     landmark: {
         type: String,
-        default: "radiantInfoTech"
+        default: "github.com/ryan5481"
     },
 
     aboutUsImage: {

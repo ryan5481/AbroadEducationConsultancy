@@ -128,6 +128,38 @@ const PartnerUniversityImageUpload = multer({
     // fileFilter: fileFilter
 }).single("partnerUniversityLogo")
 
+//PARTNER UNIVERSITY
+const galleryImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/galleryImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "Gallery_Img_" + Date.now() + ".jpeg")
+    }
+})
+
+const GalleryImageUpload = multer({
+    storage: galleryImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("galleryImage")
+
+//PARTNER UNIVERSITY
+const testPrepArticleImageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../client/src/uploads/testPrepArticleImages/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, "Test_prep_article_Img_" + Date.now() + ".jpeg")
+    }
+})
+
+const TestPrepArticleImageUpload = multer({
+    storage: testPrepArticleImageStorage,
+    // limits: { fileSize: 1024 * 1024 * 4 }, //max file size 4 MB
+    // fileFilter: fileFilter
+}).single("articleImage")
+
 exports.CarouselImageUpload = CarouselImageUpload;
 exports.LogoImageUpload = LogoImageUpload;
 exports.ServicesImageUpload = ServicesImageUpload;
@@ -136,3 +168,5 @@ exports.ArticleImageUpload = ArticleImageUpload;
 exports.CountryImageUpload = CountryImageUpload;
 exports.TestimonyImageUpload = TestimonyImageUpload;
 exports.PartnerUniversityImageUpload = PartnerUniversityImageUpload;
+exports.GalleryImageUpload = GalleryImageUpload;
+exports.TestPrepArticleImageUpload = TestPrepArticleImageUpload;
