@@ -108,7 +108,8 @@ const Carousel = () => {
             zIndex="20"
             data-aos="fade-right"
             data-aos-once="true"
-            data-aos-duration="800"
+            data-aos-duration="500"
+            data-aos-delay="1000"
             pos='absolute'
             left="100px"
             bottom='15%'

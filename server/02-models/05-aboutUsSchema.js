@@ -3,7 +3,7 @@ const aboutUsSchema = ({
 
     landmark: {
         type: String,
-        default: "radiantInfoTech"
+        default: "github.com/ryan5481"
     },
 
     aboutUsImage: {
@@ -41,6 +41,21 @@ const aboutUsSchema = ({
     text4: {
         type: String,
     },
+
+    listheading1: {
+        type: String,
+    },
+
+    listItems: [
+        {
+            liHeading: {
+                type: String,
+            },
+            liText: {
+                type: String,
+            },
+        },
+    ],
 
     createdAt: { type: Date, default: Date.now },
     

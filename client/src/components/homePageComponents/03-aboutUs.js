@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Image, Heading, Stack, Text, Center, Flex, Container, Button } from '@chakra-ui/react';
 import axios from 'axios';
 const baseUrl = process.env.REACT_APP_BASE_URL
 
 const AboutUs = () => {
-    const [aboutUsData, setAboutUsData] = useState([]);
-
+    const [aboutUsData, setAboutUsData] = useState();
+    const navigate = useNavigate()
     useEffect(() => {
         const fetchAboutUS = async () => {
             try {
@@ -19,6 +20,8 @@ const AboutUs = () => {
         fetchAboutUS();
     }, []);
 
+
+    console.log(aboutUsData)
     return (
         <Container maxW={'full'} bg='blue.600'
             color='white'>
@@ -92,7 +95,7 @@ const AboutUs = () => {
                             bg={'white'}
                             color='blue.600'
                             _hover={{ bg: 'whiteAlpha.900', color: 'blue.600' }}
-                        //   onClick={() => navigate("/about")}
+                          onClick={() => navigate("/about-us")}
 
                         >
                             Read More

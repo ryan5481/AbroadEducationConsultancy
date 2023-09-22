@@ -4,18 +4,44 @@ const servicesSchema = ({
 
     landmark: {
         type: String,
-        default: "radiantInfoTech"
+        default: "github.com/ryan5481"
     },
 
-    serviceImage: {
-        type: Object,
-    },
+    serviceImages: [
+        {
+          type: String,
+        },
+    ],
 
-    imageTitle: {
+    articleHeading1: {
+        type: String,
+    },
+    
+    articleText1: {
         type: String,
     },
 
-    imageDescription: {
+    articleHeading2: {
+        type: String,
+    },
+
+    articleText2: {
+        type: String,
+    },
+
+    articleHeading3: {
+        type: String,
+    },
+
+    articleText3: {
+        type: String,
+    },
+
+    articleHeading4: {
+        type: String,
+    },
+
+    articleText4: {
         type: String,
     },
 

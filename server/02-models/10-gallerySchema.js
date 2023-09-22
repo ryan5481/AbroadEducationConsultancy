@@ -1,13 +1,17 @@
 const mongoose = require ("mongoose");
 
-const partnerUniveristySchema = ({
+const gallerylSchema = ({
 
     landmark: {
         type: String,
         default: "github.com/ryan5481"
     },
 
-    partnerUniversityLogo: {
+    galleryImage: {
+        type: String,
+    },
+
+    imageTitle: {
         type: String,
     },
 
@@ -17,6 +21,6 @@ const partnerUniveristySchema = ({
 
 })
 
-const PartnerUniveristy = mongoose.model("PartnerUniveristy", partnerUniveristySchema);
+const Gallery = mongoose.model("Gallery", gallerylSchema);
 
-module.exports = PartnerUniveristy
+module.exports = Gallery

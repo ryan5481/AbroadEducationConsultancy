@@ -1,4 +1,4 @@
-const AboutUs = require("..//02-models/05-aboutUsSchema.js")
+const AboutUs = require("../02-models/05-aboutUsSchema.js")
 
 const PostAboutUs = async (req, res) => {
     try {
@@ -36,7 +36,7 @@ const PostAboutUs = async (req, res) => {
 
 const GetAboutUs = async (req, res) => {
     try {
-        const data = await AboutUs.findById("6504144800c9483cca3dd0ef")
+        const data = await AboutUs.findById("650af7e0108db04d57959671")
         if (data) {
             res.status(200).json({
                 data
@@ -58,7 +58,7 @@ const UpdateAboutUs = async (req, res) => {
                 ...req.body,
                 aboutUsImage: req.file.filename,
             }
-            const updated = await AboutUs.findByIdAndUpdate("6504144800c9483cca3dd0ef", reqInclImg)
+            const updated = await AboutUs.findByIdAndUpdate("650af7e0108db04d57959671", reqInclImg)
             if (updated) {
                 res.status(200).json({
                     msg: "Image modified!"

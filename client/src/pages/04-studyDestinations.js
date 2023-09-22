@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Image, Heading, Text, Grid, Container, Button, Link, Center, AspectRatio, VStack } from '@chakra-ui/react';
+import { Box, Heading, Text, Grid,Button, Link, AspectRatio, VStack } from '@chakra-ui/react';
 import axios from 'axios';
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
-const CountryArticlesGrid = () => {
+const StudyDestination = () => {
     const [countryArticlesList, setCountryArticlesList] = useState([]);
     const [hoveredIndex, setHoveredIndex] = useState(null); // Track hovered box index
     const navigate = useNavigate()
@@ -41,7 +41,7 @@ const CountryArticlesGrid = () => {
                                 border={'2px solid white'}
                                 objectFit='fill'
                                 h='300px'
-                                backgroundImage={require(`../../uploads/countryImages/${countryArticle.countryImage}`)}
+                                backgroundImage={require(`../uploads/countryImages/${countryArticle.countryImage}`)}
                                 backgroundSize="100% 100%"
                                 cursor="pointer"
                                 rounded="10px"
@@ -123,4 +123,4 @@ const CountryArticlesGrid = () => {
     );
 }
 
-export default CountryArticlesGrid;
+export default StudyDestination;
