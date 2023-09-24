@@ -55,14 +55,14 @@ const modalSize = fromHomepage = true ? 'xl' : 'full';
                                                 </Text>
                                             </Box>
                                         </Flex>
-                                        <VStack>
+                                        <Box>
                                             <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.articleHeading2}</Heading>
                                             <Text mb={10} >{data.articleText2}</Text>
                                             <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.articleHeading3}</Heading>
                                             <Text mb={10}>{data.articleText3}</Text>
                                             <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.articleHeading4}</Heading>
                                             <Text>{data.articleText4}</Text>
-                                        </VStack>
+                                        </Box>
                                     </Box>
                                 </Box>
                             </Box>

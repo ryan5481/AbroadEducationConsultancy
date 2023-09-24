@@ -30,13 +30,13 @@ const theme = extendTheme({
       900: "#271600",
     },
   },
-  components: {
-    Box: {
-      baseStyle: {
-        bg: "primary.200",
-      },
-    },
-  },
+  // components: {
+  //   Box: {
+  //     baseStyle: {
+  //       bg: "primary.200",
+  //     },
+  //   },
+  // },
 });
 
 export default theme;

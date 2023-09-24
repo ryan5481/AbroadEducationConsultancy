@@ -126,23 +126,23 @@ const Carousel = () => {
       </Slider>
       <IconButton
         bg={"transparent"}
+        icon={<ChevronLeftIcon boxSize='10' color='gray.100' />}
         _hover={{ bg: "transparent", color: hoverColor }}
-        icon={<ChevronLeftIcon boxSize='10' />}
         aria-label="Previous"
         onClick={handlePrev}
         position="absolute"
-        top={"50%"}
+        top={"7%"}
         left="2%"
         zIndex={4}
       />
       <IconButton
         bg={"transparent"}
-        _hover={{ bg: "transparent", color: hoverColor }}
-        icon={<ChevronRightIcon boxSize='10' />}
+        icon={<ChevronRightIcon boxSize='10' color='gray.100' />}
+        _hover={{ bg: "transparent", color: hoverColor  }}
         aria-label="Next"
         onClick={handleNext}
         position="absolute"
-        top={"50%"}
+        top={"7%"}
         right="2%"
         zIndex={4}
       />

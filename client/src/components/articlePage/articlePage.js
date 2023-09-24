@@ -45,7 +45,7 @@ const ArticlePage = ({ data }) => {
                                 </Text>
 
                             </Box>
-                            <VStack>
+                            <Box>
                                 <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.heading2}</Heading>
                                 <Text mb={10} >{data.text2}</Text>
                                 { data && data.points1 && data.points1
@@ -58,7 +58,7 @@ const ArticlePage = ({ data }) => {
                                 <Text mb={10}>{data.text3}</Text>
                                {data.heading4 && <Heading textAlign='left' fontSize={24} fontWeight='bold'  >{data.heading4}</Heading>}
                                 {data.text4 && <Text mb={10}>{data.text4}</Text>}
-                                <Heading p={5} textAlign='left' fontSize={24} fontWeight='bold'  >{data.listheading1}</Heading>
+                                <Heading p={5} textAlign='center' fontSize={24} fontWeight='bold'  >{data.listheading1}</Heading>
                                 {data.listItems && 
                                 <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}  pb={5}>
                  
@@ -75,7 +75,7 @@ const ArticlePage = ({ data }) => {
                                     ))}
                                 </SimpleGrid>}
 
-                            </VStack>
+                            </Box>
                         </Box>
                     </Box>
                 </VStack>

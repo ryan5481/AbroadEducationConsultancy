@@ -68,6 +68,8 @@ const Gallery = () => {
             <Masonry columnsCount={6} gutter="20px" style={{paddingBottom: "30px"}} >
                 {galleryImages && galleryImages.map((image, index) => (<>
                     <Image
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
                         key={index}
                         rounded={5}
                         src={require(`../uploads/galleryImages/${image.galleryImage}`)}
@@ -79,9 +81,12 @@ const Gallery = () => {
                         onClick={() => openModal(image)}
                     />
                     <Text
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-delay="500"
                         pos='relative'
                         bottom='3%'
-                        zIndex="20"
+                        zIndex="-1"
                         textAlign='center'
                         fontSize='20px'
                         fontWeight='bold'
@@ -100,9 +105,10 @@ const Gallery = () => {
             <Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr 1fr' }} gap={5} p={10} align="center" rowGap={5}>
                 {videoUrls && videoUrls.map((urlObj, index) => (
                     <>
-                    <Box>
-
-                   
+                    <Box
+                     data-aos="fade-down"
+                     data-aos-duration="1000"
+                    >
                         <iframe
                             width="280"
                             height="157"
@@ -113,11 +119,14 @@ const Gallery = () => {
                             allowfullscreen="true"
                         />
                         <Text
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        data-aos-delay="500"
+                        zIndex={-1}
                         pos='relative'
                         w='280px'
                         py={5}
                         bottom='3%'
-                        zIndex="20"
                         textAlign='center'
                         fontSize='20px'
                         fontWeight='bold'

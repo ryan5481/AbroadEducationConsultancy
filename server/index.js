@@ -17,6 +17,7 @@ const partnerUniversityRoutes = require('./05-routes/09-partnerUniversityRoutes.
 const galleryRoutes = require('./05-routes/10-galleryRoutes.js')
 const videoGalleryRoutes = require('./05-routes/10-videoGalleryRoutes.js')
 const testPrepArticleRoutes = require('./05-routes/11-testPrepArticleRoutes.js')
+const inquiryRoutes = require('./05-routes/99-inquiryRoutes.js')
 
 const port = 8000;
 
@@ -38,6 +39,8 @@ app.use("/", partnerUniversityRoutes);
 app.use("/", galleryRoutes);
 app.use("/", videoGalleryRoutes);
 app.use("/", testPrepArticleRoutes);
+
+app.use("/", inquiryRoutes);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
