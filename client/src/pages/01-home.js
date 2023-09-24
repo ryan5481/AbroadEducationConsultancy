@@ -20,7 +20,7 @@ const Home = () => {
                 <ServicesGrid displayAll={false} fromHomePage={true} />
                 <AboutUs/>
                 <ArticlesGrid/>
-                <CountryArticlesGrid/>
+                <CountryArticlesGrid fromHomePage='true' />
                 <Testimonies/>
                 <Box >
                 <Universities />

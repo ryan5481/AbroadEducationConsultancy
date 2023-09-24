@@ -121,7 +121,7 @@ const Footer = () => {
 
     return (
         <Box
-            bg={useColorModeValue('blue.900', 'gray.1000')}
+            bg={useColorModeValue('blue.800', 'blue.900')}
             color={useColorModeValue('gray.200', 'gray.200')}
             p={1}
         >

@@ -62,6 +62,7 @@ const StudyDestination = () => {
                                 style={{
                                     opacity: hoveredIndex === index ? "0.25" : '0', 
                                 }}
+                                onClick={()=>navigate(`/study-in-${countryArticle.heading1.replace(/\s/g, "-")}`)}
                                 />
                                 <VStack
                                     textAlign='center'
@@ -71,7 +72,7 @@ const StudyDestination = () => {
                                     w='100%'
                                     transform="translate(-50%, -50%)"
                                 >
-                                    <Box p={5}>
+                                    <Box p={5} >
                                         <Text
                                             textAlign='left'
                                             fontSize='20px'
@@ -117,7 +118,7 @@ const StudyDestination = () => {
                     ))}
                 </Grid>
             )}
-            <Button mb={5} colorScheme='blue' rounded='full' >Discover more countries</Button>
+            {/* <Button mb={5} colorScheme='blue' rounded='full' >Discover more countries</Button> */}
 
         </Box>
     );

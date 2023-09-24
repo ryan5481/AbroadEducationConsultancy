@@ -23,6 +23,7 @@ import IELTS from '../pages/06.2-IELTS';
 import TOEFL from '../pages/06.3-TOEFL';
 import GRE from '../pages/06.4-GRE';
 import SAT from '../pages/06.4-SAT';
+import ContactUs from '../pages/07-contactUs';
 
 
 
@@ -58,6 +59,7 @@ const UserRoutes = () => {
       <Route path="/toefl-test" element={<TOEFL />} />
       <Route path="/gre-test" element={<GRE />} />
       <Route path="/sat-test" element={<SAT />} />
+      <Route path="/contact-us" element={<ContactUs />} />
         {/* <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/brochure" element={<Brochure />} /> */}
       </Routes>

@@ -33,7 +33,7 @@ const CountryArticlesGrid = () => {
                     rowGap={5}
                 >
                     {countryArticlesList.map((countryArticle, index) => (
-                        <AspectRatio key={index}>
+                        <AspectRatio key={index} onClick={()=>navigate(`/study-in-${countryArticle.heading1.replace(/\s/g, "-")}`)}>
                             <Box
                                 pos='relative'
                                 m={0}
@@ -80,11 +80,11 @@ const CountryArticlesGrid = () => {
                                             // }}
                                             transition="0.5s ease-in-out"
                                             opacity={hoveredIndex === index ? 1 : 0}
-
+                                            onClick={()=>navigate(`/study-in-${countryArticle.heading1.replace(/\s/g, "-")}`)}
                                         >
                                             {countryArticle.text1.split(/\s+/).slice(0, 12).join(' ') + " ..."}
                                         </Text>
-                                        <Link
+                                             <Link
                                             w='100%'
                                             textAlign='left'
                                             fontSize='20px'
@@ -93,8 +93,8 @@ const CountryArticlesGrid = () => {
                                             // }}
                                             transition="0.5s ease-in-out"
                                             opacity={hoveredIndex === index ? 1 : 0}
-                                            onClick={()=>navigate(`/study-in-${countryArticle.heading1.replace(/\s/g, "-")}`)}
-                                        >Learn more</Link>
+                                            
+                                        >Learn more</Link> 
                                     </Box>
                                     <Box
                                         w='100%'
@@ -117,7 +117,7 @@ const CountryArticlesGrid = () => {
                     ))}
                 </Grid>
             )}
-            <Button mb={5} colorScheme='blue' rounded='full' >Discover more countries</Button>
+            <Button mb={5} colorScheme='blue' rounded='full' onClick={()=> navigate("/study-destination")} >Discover more countries</Button>
 
         </Box>
     );

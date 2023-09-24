@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Image, Heading, VStack, Text, Center, SimpleGrid, useColorModeValue, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons'
+import { Box, Image, Heading, VStack, Text, Button, useDisclosure, useColorModeValue, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons'
+import InquiryModal from '../modals/inquiryFormModal';
+
 const baseUrl = process.env.REACT_APP_BASE_URL
 
 const TestPrepArticle = ({ searchKey }) => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
     const taglineColor = useColorModeValue('brown.600', 'brown.10');
     const textColor = useColorModeValue('blue.600', 'white');
     const [article, setArticle] = useState({});
@@ -22,42 +25,78 @@ const TestPrepArticle = ({ searchKey }) => {
         fetchArticles();
     }, []);
 
-
     return (
         <Box overflow="hidden" >
             {article && article.articleImage && <Box color={textColor} justifyContent="center" textAlign='center'>
 
-                {/* <Center  > */}
-                <Box
+            <Box
                     pos='relative'
-                    // w='100%'
+                    w='100%'
                     h='500px'
                     overflow='hidden'
                     borderWidth="1px"
                     shadow="lg"
+                    style={{
+                        background: `url(${require(`../../uploads/testPrepArticleImages/${article.articleImage}`)}) center center`,
+
+                        backgroundSize: 'cover',
+                    }}
                 >
                     <Box
                         pos='absolute'
                         w='100%'
-                        h='500px'
+                        h='100%'
+                        top="0"
+                        left='0'
                         bg='black'
                         zIndex='10'
                         style={{
                             opacity: "0.2",
                         }}
                     />
-                    <div
-                        zIndex={0}
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            background: `url(${require(`../../uploads/testPrepArticleImages/${article.articleImage}`)}) center center`,
-                            zIndex: "0",
-                            backgroundSize: 'cover',
+                    <Box
+                        zIndex="20"
+                        color='white'
+                        data-aos="flip-up"
+                        data-aos-duration="1300"
+                        pos='relative'
+                        top="50%"
+                        mt={4}
+                    >
+                        <Heading
+                        style={{ 
+                            fontFamily: 'Bebas Neue, sans-serif', 
+                            textShadow: '1px 2px 4px rgba(0, 0, 0, 0.3)' 
                         }}
-                    />
+                        as="h1"
+                        fontSize={{ base: '3xl', md: '5xl', lg: '8xl' }}
+                        textAlign="center"
+                        >
+                        {article.heading1} TEST PREPARATION
+                        </Heading>
+                    </Box>
+                    <Button
+                            zIndex="20"
+                            data-aos="fade-right"
+                            data-aos-once="true"
+                            data-aos-duration="1000"
+                            data-aos-delay="500"
+                            pos='absolute'
+                            left="26%"
+                            bottom='15%'
+                            bg='blue.600'
+                            colorScheme='blue'
+                            color='white'
+                            rounded='full'
+                            px={10}
+                            h='50px'
+                            fontSize='22px'
+                            shadow={'xl'}
+                            onClick={onOpen}
+                            >
+                            Enquire Now <ArrowForwardIcon boxSize={8} /> </Button>
                 </Box>
-                {/* </Center> */}
+
                 <Heading
                     zIndex="20"
                     color='white'
@@ -261,10 +300,10 @@ const TestPrepArticle = ({ searchKey }) => {
                                 {article.accordionText5}
                                 </AccordionPanel>
                             </AccordionItem>}
-
                         </Accordion>
                     </Box>
                 </VStack>
+                <InquiryModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} searchKey={searchKey} />
             </Box>}
         </Box>
     )
