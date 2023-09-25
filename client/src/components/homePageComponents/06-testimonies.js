@@ -117,9 +117,9 @@ const Testimonies = () => {
                                         textAlign='left'
                                     >
                                         <text style={{ fontFamily: 'Handlee, sans-serif', fontWeight: 'bold', fontSize: '26px' }} >
-                                            {/* <Typewriter text={testimony.testimonyText} delay={50}  /> _ */}
+                                            <Typewriter text={testimony.testimonyText} delay={50}  /> _
                                         </text>
-                                        <Text style={{ fontFamily: 'Handlee, sans-serif', fontWeight: 'bold', fontSize: '26px' }} >{testimony.testimonyText} </Text>
+                                        {/* <Text style={{ fontFamily: 'Handlee, sans-serif', fontWeight: 'bold', fontSize: '26px' }} >{testimony.testimonyText} </Text> */}
                                     </Box>
                                     <ImQuotesRight />
                                 </VStack>

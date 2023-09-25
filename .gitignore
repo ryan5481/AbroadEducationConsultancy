@@ -5,7 +5,6 @@
 /client/.env
 /client/build
 /client/build
-/client/src/uploads
 
 /server/node_modules
 /server/src/uploads
