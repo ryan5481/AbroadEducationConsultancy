@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Text, Grid,Button, Link, AspectRatio, VStack } from '@chakra-ui/react';
+import { Box, Heading, Text, Grid, Link, AspectRatio, VStack } from '@chakra-ui/react';
 import axios from 'axios';
 const baseUrl = process.env.REACT_APP_BASE_URL;
 

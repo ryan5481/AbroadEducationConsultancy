@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { Box, Center } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
  
 class LineChart extends React.Component {

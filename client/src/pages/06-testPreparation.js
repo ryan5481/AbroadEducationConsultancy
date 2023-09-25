@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Image, Heading, Text, Grid, Container, Button, Flex, Center, AspectRatio, Stack } from '@chakra-ui/react';
-import axios from 'axios';
-const baseUrl = process.env.REACT_APP_BASE_URL;
+import { Box, Image, Grid } from '@chakra-ui/react';
 
 const TestPrepration = () => {
     const navigate = useNavigate()
@@ -35,12 +33,15 @@ const TestPrepration = () => {
                 <>
 
                     <Box
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        // data-aos-delay="500"
                         maxW="sm"
                         borderWidth="1px"
                         rounded="lg"
                         shadow="lg"
                         justifySelf='center'
-                        onClick={()=>navigate(`${item.href}-test`)}
+                        onClick={() => navigate(`${item.href}-test`)}
                     >
                         <Image
                             m={10}

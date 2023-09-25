@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-const dotenv = require("dotenv")
+const dotenv = ("dotenv")
 require('dotenv').config()
 
 const connectDb = require('./01-database/connectDB.js');
-
+//USER
 const contactRoutes = require('./05-routes/01-contactRoutes.js')
 const logoRoutes = require('./05-routes/01.5-logoRoutes.js')
 const navbarRoutes = require('./05-routes/02-navbarRoutes.js')
@@ -20,6 +20,8 @@ const galleryRoutes = require('./05-routes/10-galleryRoutes.js')
 const videoGalleryRoutes = require('./05-routes/10-videoGalleryRoutes.js')
 const testPrepArticleRoutes = require('./05-routes/11-testPrepArticleRoutes.js')
 const inquiryRoutes = require('./05-routes/99-inquiryRoutes.js')
+//ADMIN
+const authRoutes = require('./05-routes/00-admin/00-authRoutes.js')
 
 const port = process.env.PORT || 8000;
 
@@ -27,7 +29,7 @@ connectDb()
 
 app.use(express.json());
 app.use(cors());
-
+//USER
 app.use("/", contactRoutes);
 app.use("/", logoRoutes);
 app.use("/", navbarRoutes);
@@ -41,8 +43,10 @@ app.use("/", partnerUniversityRoutes);
 app.use("/", galleryRoutes);
 app.use("/", videoGalleryRoutes);
 app.use("/", testPrepArticleRoutes);
-
 app.use("/", inquiryRoutes);
+//ADMIN
+app.use("/", authRoutes);
+
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

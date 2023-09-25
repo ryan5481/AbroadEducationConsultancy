@@ -112,10 +112,10 @@ const InquiryModal = ({ isOpen, onOpen, onClose, searchKey }) => {
                 <form onSubmit={formik.handleSubmit}>
 
                     <ModalContent color='blue.600' >
-                        <ModalHeader textAlign="center"  >
+                        { logoImageData && logoImageData.logoImage && <ModalHeader textAlign="center"  >
                             <Center>
                             <Image
-                                // src={require("../../uploads/logoImages/" + logoImageData.logoImage)}
+                                src={require("../../uploads/logoImages/" + logoImageData.logoImage)}
                                 alt="Logo"
                                 h='50px'
                                 p={2}
@@ -127,7 +127,7 @@ const InquiryModal = ({ isOpen, onOpen, onClose, searchKey }) => {
                                 fontFamily={'heading'}
                             />
                             </Center>
-                            </ModalHeader>
+                            </ModalHeader>}
                             <Heading textAlign="center" fontSize="28px" >Inquiry Form</Heading>
                         <ModalCloseButton />
                         <ModalBody pb={6}>
