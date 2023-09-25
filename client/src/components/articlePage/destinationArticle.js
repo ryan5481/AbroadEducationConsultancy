@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Image, Heading, VStack, Text, Center, useDisclosure, useColorModeValue, Button } from '@chakra-ui/react';
+import { Box, Heading, Text, useDisclosure, useColorModeValue, Button } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import InquiryModal from '../modals/inquiryFormModal';
 
@@ -90,7 +90,7 @@ const DestinationArticle = ({ searchKey }) => {
                             h='50px'
                             fontSize='22px'
                             shadow={'xl'}
-                            // onClick={onOpen}
+                            onClick={onOpen}
                             >
                             Enquire Now <ArrowForwardIcon boxSize={8} /> </Button>
                     </Box>
@@ -130,7 +130,7 @@ const DestinationArticle = ({ searchKey }) => {
                         </Box>
                     </Box>
                 </Box>
-                {/* <InquiryModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} searchKey={searchKey} /> */}
+                <InquiryModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} searchKey={searchKey} />
             </Box>}
         </Box>
     )

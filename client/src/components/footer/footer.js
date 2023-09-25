@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
@@ -33,7 +33,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
     const navigate = useNavigate()
-    const [currentFooterData, setCurrentFooterData] = useState([])
+    // const [currentFooterData, setCurrentFooterData] = useState([])
     const [logoImageData, setLogoImageData] = useState({});
     const [email, setEmail] = useState('');
     const [socialData, setSocialData] = useState([])
@@ -93,27 +93,27 @@ const Footer = () => {
     //SOCIAL ICON LINKS
     function openMessengerChat(recipientId) {
         // Replace 'your-app-id' with your Facebook App ID
-        const appId = 'your-app-id';
+        // const appId = 'your-app-id';
         const messengerUrl = `https://m.me/${socialData.oneTapMessengerLink}`;
         window.open(messengerUrl, 'Messenger Chat', 'width=600,height=400');
     }
 
     function openFaceBookPage(recipientId) {
         // Replace 'your-app-id' with your Facebook App ID
-        const appId = 'your-app-id';
+        // const appId = 'your-app-id';
         const facebookUrl = `https://facebook.com/${socialData.facebookId}`;
         window.open(facebookUrl, 'Facebook Page', 'width=600,height=400');
     }
 
     function openWhatsappChat(recipientId) {
         // Replace 'your-app-id' with your Facebook App ID
-        const appId = 'your-app-id';
+        // const appId = 'your-app-id';
         const whatsappPhoneNumber = `https://wa.me/${socialData.whatsappId}`;
         window.open(whatsappPhoneNumber, 'Whatsapp Chat', 'width=600,height=400');
     }
     function openInstagramPage(recipientId) {
         // Replace 'your-app-id' with your Facebook App ID
-        const appId = 'your-instagram-id';
+        // const appId = 'your-instagram-id';
         const instagramUrl = `https://ig.me/${socialData.instagramId}`;
         window.open(instagramUrl, 'Instagram Chat', 'width=600,height=400');
     }
@@ -130,15 +130,16 @@ const Footer = () => {
                     templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 1fr' }}
                     spacing={2}>
                     <Stack spacing={6}>
-                        <Box align="center">
+                        { logoImageData && logoImageData.logoImage &&  <Box align="center">
                             {logoImageData &&
                                 <Image
-                                    h='100px'
-                                    // src={require(`../../uploads/logoImages/${logoImageData.logoImage}`)}
+                                    maxH='50px'
+                                    w="100%"
+                                    src={require(`../../uploads/logoImages/${logoImageData.logoImage}`)}
                                     alt='Logo'
                                 />
                             }
-                        </Box>
+                        </Box>}
                         <Text fontSize={'sm'}>{socialData.tagline1}</Text>
                         <Text fontSize={'sm'}>{socialData.taline2}</Text>
                         <Text fontSize={'sm'}>{socialData.tagline3}</Text>

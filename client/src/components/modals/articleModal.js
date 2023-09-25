@@ -1,4 +1,4 @@
-import { Box, Image, Heading, Text, Flex, VStack, Modal, ModalOverlay, ModalContent, Center, ModalCloseButton, ModalBody, useColorModeValue } from '@chakra-ui/react';
+import { Box, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, Center, ModalCloseButton, ModalBody, useColorModeValue } from '@chakra-ui/react';
 
 const ArticleModal = ({ isOpen, onClose, data, fromHomepage }) => {
 const taglineColor = useColorModeValue('brown.600', 'brown.10');

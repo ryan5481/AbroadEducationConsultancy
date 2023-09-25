@@ -27,27 +27,26 @@ import { BsWhatsapp, BsPerson, BsMessenger, BsInstagram } from 'react-icons/bs'
 const ContactCard = (props) => {
 
   function openMessengerChat(recipientId) {
-    // const appId = 'your-app-id';
     const messengerUrl = `https://m.me/${props.data.messangerId}`;
     window.open(messengerUrl, 'Messenger Chat', 'width=600,height=400');
   }
 
   function openFaceBookPage(recipientId) {
-    const appId = 'your-app-id';
+    // const appId = 'your-app-id';
     const facebookUrl = `https://facebook.com/${props.data.facebookId}`;
     window.open(facebookUrl, 'Facebook Page', 'width=600,height=400');
   }
 
   function openWhatsappChat(recipientId) {
     // Replace 'your-app-id' with your Facebook App ID
-    const appId = 'your-app-id';
+    // const appId = 'your-app-id';
     const whatsappPhoneNumber = `https://wa.me/${props.data.whatsappId}`;
     window.open(whatsappPhoneNumber, 'Whatsapp Chat', 'width=600,height=400');
   }
 
   function openInstagramPage(recipientId) {
     // Replace 'your-app-id' with your Facebook App ID
-    const appId = 'your-instagram-id';
+    // const appId = 'your-instagram-id';
     const instagramUrl = `https://ig.me/${props.data.instagramId}`;
     window.open(instagramUrl, 'Instagram Chat', 'width=600,height=400');
 }

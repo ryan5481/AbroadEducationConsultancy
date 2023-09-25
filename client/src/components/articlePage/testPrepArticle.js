@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Image, Heading, VStack, Text, Button, useDisclosure, useColorModeValue, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
+import { Box, Heading, VStack, Text, Button, useDisclosure, useColorModeValue, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import InquiryModal from '../modals/inquiryFormModal';
 
@@ -97,22 +97,7 @@ const TestPrepArticle = ({ searchKey }) => {
                             Enquire Now <ArrowForwardIcon boxSize={8} /> </Button>
                 </Box>
 
-                <Heading
-                    zIndex="20"
-                    color='white'
-                    // data-aos="flip-up"
-                    // data-aos-duration="2000"
-                    pos='absolute'
-                    left="100px"
-                    bottom="10px"
-                    style={{ fontFamily: 'Bebas Neue, sans-serif', textShadow: '1px 2px 4px rgba(0, 0, 0, 0.3)' }}
-                    as="h1"
-                    fontSize={{ base: '3xl', md: '5xl', lg: '8xl' }}
-                    textAlign="center"
-                    mt={4}
-                >
-                    {article.heading2}
-                </Heading>
+                
                 <VStack
                     px={20}
                 >

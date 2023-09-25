@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Image, Heading, Stack, Text, Center, Flex, Container, Button } from '@chakra-ui/react';
 import axios from 'axios';
 import ArticlePage from '../components/articlePage/articlePage';
 const baseUrl = process.env.REACT_APP_BASE_URL

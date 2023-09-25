@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Image, Heading, Stack, Text, Center, Flex, Container, Button, Grid, useDisclosure } from '@chakra-ui/react';
+import { Box, Image, Heading,Text, Grid, useDisclosure } from '@chakra-ui/react';
 import axios from 'axios';
 import Masonry from "react-responsive-masonry"
 import ImageModal from '../components/modals/imageModal';
@@ -108,6 +108,8 @@ const Gallery = () => {
                     <Box
                      data-aos="fade-down"
                      data-aos-duration="1000"
+                     data-aos-once="true"
+
                     >
                         <iframe
                             width="280"
@@ -122,6 +124,7 @@ const Gallery = () => {
                         data-aos="fade-down"
                         data-aos-duration="1000"
                         data-aos-delay="500"
+                        data-aos-once="true"
                         zIndex={-1}
                         pos='relative'
                         w='280px'

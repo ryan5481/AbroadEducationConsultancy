@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Text, Box, Button } from "@chakra-ui/react";
+import React from 'react';
+import { Box } from "@chakra-ui/react";
 
 import Carousel from "../components/homePageComponents/01-carousel";
 import ServicesGrid from '../components/homePageComponents/02-servicesGrid';

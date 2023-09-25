@@ -4,16 +4,11 @@ import axios from 'axios';
 import {
   Box,
   Center,
-  chakra,
   Container,
   Stack,
-  Text,
-  useColorModeValue,
-  VisuallyHidden,
   IconButton
 } from '@chakra-ui/react'
 import { FaWhatsapp, FaFacebook, FaFacebookMessenger } from 'react-icons/fa'
-import { ReactNode } from 'react'
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
 
@@ -49,23 +44,17 @@ const Header = () => {
     };
   }, []);
 
-  function openMessengerChat(recipientId) {
-    // Replace 'your-app-id' with your Facebook App ID
-    const appId = 'your-app-id';
-    const messengerUrl = `https://m.me/${data.messangerId}`;
-    window.open(messengerUrl, 'Messenger Chat', 'width=600,height=400');
-  }
+  // function openMessengerChat(recipientId) {
+  //   const messengerUrl = `https://m.me/${data.messangerId}`;
+  //   window.open(messengerUrl, 'Messenger Chat', 'width=600,height=400');
+  // }
 
-  function openFaceBookPage(recipientId) {
-    // Replace 'your-app-id' with your Facebook App ID
-    const appId = 'your-app-id';
-    const facebookUrl = `https://facebook.com/${data.facebookId}`;
-    window.open(facebookUrl, 'Facebook Page', 'width=600,height=400');
-  }
+  // function openFaceBookPage(recipientId) {
+  //   const facebookUrl = `https://facebook.com/${data.facebookId}`;
+  //   window.open(facebookUrl, 'Facebook Page', 'width=600,height=400');
+  // }
 
   function openWhatsappChat(recipientId) {
-    // Replace 'your-app-id' with your Facebook App ID
-    const appId = 'your-app-id';
     const whatsappPhoneNumber = `https://wa.me/${data.whatsappId}`;
     window.open(whatsappPhoneNumber, 'Whatsapp Chat', 'width=600,height=400');
   }
