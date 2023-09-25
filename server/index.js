@@ -19,7 +19,7 @@ const videoGalleryRoutes = require('./05-routes/10-videoGalleryRoutes.js')
 const testPrepArticleRoutes = require('./05-routes/11-testPrepArticleRoutes.js')
 const inquiryRoutes = require('./05-routes/99-inquiryRoutes.js')
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 connectDb()
 
