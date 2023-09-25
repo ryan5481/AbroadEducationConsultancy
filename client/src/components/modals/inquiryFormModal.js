@@ -115,7 +115,7 @@ const InquiryModal = ({ isOpen, onOpen, onClose, searchKey }) => {
                         <ModalHeader textAlign="center"  >
                             <Center>
                             <Image
-                                src={require("../../uploads/logoImages/" + logoImageData.logoImage)}
+                                // src={require("../../uploads/logoImages/" + logoImageData.logoImage)}
                                 alt="Logo"
                                 h='50px'
                                 p={2}
