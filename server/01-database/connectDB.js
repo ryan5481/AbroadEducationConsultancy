@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config()
 
 const connectDb = async ()=>{
   try {
-    console.log(process.env.MONGO_URI)
-await mongoose.connect(process.env.MONGO_URI || "mongodb+srv://ryan:Password%401234@cluster0.bstxwvk.mongodb.net/")
-console.log('MongoDB working');
-  // Start using the database
+    // console.log(process.env.MONGO_URI)
+await mongoose.connect(process.env.MONGO_URI)
+console.log('Connected to MongoDB');
 }
   catch (error) {
     console.log(error);
   }
 }
+
+module.exports = connectDb
 
 // const connectDb = async () => {
 //   try {
@@ -22,5 +23,3 @@ console.log('MongoDB working');
 //     console.log("Db Connection error", err)
 //   }
 // }
-
-module.exports = connectDb
