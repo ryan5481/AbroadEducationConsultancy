@@ -47,7 +47,6 @@ const AboutUs = () => {
                             boxShadow={'2xl'}
                             width={'full'}
                             overflow={'hidden'}
-                            h={{ sm: '200', lg: '400px' }}
                         >
 
                             <Center data-aos="zoom-out-up" data-aos-duration="3000">

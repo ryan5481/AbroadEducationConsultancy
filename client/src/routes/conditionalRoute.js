@@ -24,8 +24,8 @@ import TOEFL from '../pages/06.3-TOEFL';
 import GRE from '../pages/06.4-GRE';
 import SAT from '../pages/06.4-SAT';
 import ContactUs from '../pages/07-contactUs';
-
-
+//ADMIN ROUTES
+import AdminLogin from '../pages/00-admin/00-auth/01-adminLogin';
 
 const ConditionalRoute = () => {
   const { userRole } = useSelector(state => state.user)
@@ -60,8 +60,9 @@ const UserRoutes = () => {
       <Route path="/gre-test" element={<GRE />} />
       <Route path="/sat-test" element={<SAT />} />
       <Route path="/contact-us" element={<ContactUs />} />
-        {/* <Route path="/adminlogin" element={<AdminLogin />} />
-        <Route path="/brochure" element={<Brochure />} /> */}
+      <Route path="/admin-login" element={<AdminLogin />} />
+      
+        {/* <Route path="/brochure" element={<Brochure />} /> */} */}
       </Routes>
       <Footer />
     </>
